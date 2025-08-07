@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+
+rm *.o
+rm *.o.map
+rm *.o.s
+rm *.map
+
+rm *.axf
+rm *.axf.map
+rm *.axf.s
+rm *.axf.bin
+rm *.axf.bin.ntl00

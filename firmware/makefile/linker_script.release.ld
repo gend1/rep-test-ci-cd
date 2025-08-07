@@ -1,0 +1,4 @@
+MEMORY
+{
+   ram(WAIL) : ORIGIN = 0x00000000, LENGTH = 0xFFFFF
+}

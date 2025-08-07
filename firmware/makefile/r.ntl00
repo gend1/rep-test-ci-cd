@@ -1,0 +1,53 @@
+#!/bin/bash
+#
+align=0x100
+
+file=release.axf.bin
+
+file_size=`stat -c %s ${file}`
+
+#outfile=${file}_`date +%Y%m%d`_`date +%H%M%S`.ntl00
+outfile=${file}.ntl00
+
+#exit
+
+#Начальный адрес FLASH
+echo -en "\x00\x00\x00\x90"                 >  ${outfile}
+
+#echo -en "\x00\x02\x00\x00"                 >> ${outfile}
+
+let "file_size_align=align-file_size%align"
+#echo ${file_size_align}
+let "in=file_size+file_size_align"
+for i in 0 1 2 3
+do
+let "ou=in%256"
+xx=`printf '%X' $ou`
+echo -en "\x$xx"            >> ${outfile}
+let "in=in/256"
+done
+
+#
+#start address
+echo -en "\x00\xe0\x0e\x00"                 >> ${outfile}
+#echo -n -e "\x00\x00\x00\x00"                 >> ${outfile}
+
+
+#echo -n -e "\x75\x00\x00\x00"                 >> ${outfile}
+let "file_size_div_4=file_size/4"
+let "in=file_size_div_4"
+for i in 0 1 2 3
+do
+let "ou=in%256"
+xx=`printf '%X' $ou`
+echo -en "\x$xx"            >> ${outfile}
+let "in=in/256"
+done
+
+#echo ${file_size}
+#echo ${file_size_align}
+
+let "file_size_align-=8"
+
+cat release.axf.bin                   >> ${outfile}
+dd if=/dev/zero bs=1 count=$file_size_align   >> ${outfile} 2>/dev/null

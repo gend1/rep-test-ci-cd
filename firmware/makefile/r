@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+
+ARCH=arm-none-eabi
+#ARCH=armv5tel-softfloat-linux-gnueabi
+
+#ARCH=x86_64-pc-linux-gnu
+
+
+#AS=${ARCH}-as
+#GCC=${ARCH}-gcc
+#GCC=gcc
+
+MARCH="-march=armv5te -g"
+CFLAGS="-Os"
+# -D_FORTIFY_SOURCE=0"
+
+./r.clean
+
+#exit
+
+#
+${ARCH}-as        ${MARCH}                                          start.release.s     -o        start.release.o
+
+${ARCH}-gcc       ${MARCH} ${CFLAGS} -c main.c                   -o main.c.o
+arm-none-eabi-gcc ${MARCH} ${CFLAGS} -T linker_script.release.ld -o start.release.c.axf           start.release.o             main.c.o                -nostdlib
+${ARCH}-objcopy                                                     start.release.c.axf -O binary start.release.c.axf.bin
+
+arm-none-eabi-gcc ${MARCH} ${CFLAGS} -T linker_script.debug.ld   -o start.debug.c.axf             start.release.o             main.c.o                -nostdlib
+${ARCH}-objcopy                                                     start.debug.c.axf   -O binary start.debug.c.axf.bin
+
+
+#${ARCH}-gcc       ${MARCH} ${CFLAGS} -c main.cpp         -o main.cpp.o
+#${ARCH}-gcc       ${MARCH} ${CFLAGS} -c extern.cpp       -o extern.cpp.o
+#arm-none-eabi-gcc ${MARCH} ${CFLAGS} -T linker_script.ld -o start.release.cpp.axf           start.release.o           main.cpp.o extern.cpp.o -nostdlib
+#${ARCH}-objcopy                                             start.release.cpp.axf -O binary start.release.cpp.axf.bin
+
+./.remap
+./.reasm
+./r.ntl00

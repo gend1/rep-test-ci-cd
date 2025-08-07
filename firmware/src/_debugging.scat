@@ -1,0 +1,15 @@
+LOAD_FLASH 0x0800 0xfffff
+
+{
+	EXEC_FLASH 0x0800
+	{
+		test_pins.o (VIC,+First)
+	}
+	SRAM +0
+	{
+		*.o (+RO,+RW,+ZI)
+	}
+	
+}
+
+

@@ -1,0 +1,31 @@
+#!/bin/sh
+#-----------------------
+#***********************
+#
+#	 Обрабатывает все файлы каталога командной строкой,
+#	  которая указывается как параметр
+#
+#***********************
+#-----------------------
+cd ./
+for file in *.o
+do
+	if [ -f "${file}" ]; then
+		echo -e "Выполняем:objdump -d "${file}" >"${file}".s"
+		nice -n 20 objdump -d "${file}" >""${file}".s" 2>&1
+	fi
+done
+for file in *.axf
+do
+	if [ -f "${file}" ]; then
+		echo -e "Выполняем:objdump -d "${file}" >"${file}".s"
+		nice -n 20 objdump -d "${file}" >""${file}".s" 2>&1
+	fi
+done
+for file in *.o.IDE
+do
+	if [ -f "${file}" ]; then
+		echo -e "Выполняем:objdump -d "${file}" >"${file}".s"
+		nice -n 20 objdump -d "${file}" >""${file}".s" 2>&1
+	fi
+done

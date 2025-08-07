@@ -1,0 +1,148 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           ARM
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          71284 (bytes into file)
+  Flags:                             0x5000200, Version5 EABI, soft-float ABI
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         1
+  Size of section headers:           40 (bytes)
+  Number of section headers:         18
+  Section header string table index: 17
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .text             PROGBITS        00000000 010000 000118 00  AX  0   0  4
+  [ 2] .text.startup     PROGBITS        00000118 010118 00012c 00  AX  0   0  4
+  [ 3] .rodata           PROGBITS        00000244 010244 000040 00   A  0   0  4
+  [ 4] .data             PROGBITS        00000284 010284 000014 00  WA  0   0  4
+  [ 5] .bss              NOBITS          00000298 010298 000010 00  WA  0   0  4
+  [ 6] .ARM.attributes   ARM_ATTRIBUTES  00000000 010298 000027 00      0   0  1
+  [ 7] .comment          PROGBITS        00000000 0102bf 000049 01  MS  0   0  1
+  [ 8] .debug_line       PROGBITS        00000000 010308 000302 00      0   0  1
+  [ 9] .debug_info       PROGBITS        00000000 01060a 000413 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 010a1d 000107 00      0   0  1
+  [11] .debug_aranges    PROGBITS        00000000 010b28 000048 00      0   0  8
+  [12] .debug_str        PROGBITS        00000000 010b70 00035a 01  MS  0   0  1
+  [13] .debug_ranges     PROGBITS        00000000 010eca 000018 00      0   0  1
+  [14] .debug_frame      PROGBITS        00000000 010ee4 000060 00      0   0  4
+  [15] .symtab           SYMTAB          00000000 010f44 000450 10     16  33  4
+  [16] .strtab           STRTAB          00000000 011394 000227 00      0   0  1
+  [17] .shstrtab         STRTAB          00000000 0115bb 0000b6 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), y (purecode), p (processor specific)
+
+There are no section groups in this file.
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x010000 0x00000000 0x00000000 0x00298 0x002a8 RWE 0x10000
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text .text.startup .rodata .data .bss 
+
+There is no dynamic section in this file.
+
+There are no relocations in this file.
+
+There are no unwind sections in this file.
+
+Symbol table '.symtab' contains 69 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 SECTION LOCAL  DEFAULT    1 .text
+     2: 00000118     0 SECTION LOCAL  DEFAULT    2 .text.startup
+     3: 00000244     0 SECTION LOCAL  DEFAULT    3 .rodata
+     4: 00000284     0 SECTION LOCAL  DEFAULT    4 .data
+     5: 00000298     0 SECTION LOCAL  DEFAULT    5 .bss
+     6: 00000000     0 SECTION LOCAL  DEFAULT    6 .ARM.attributes
+     7: 00000000     0 SECTION LOCAL  DEFAULT    7 .comment
+     8: 00000000     0 SECTION LOCAL  DEFAULT    8 .debug_line
+     9: 00000000     0 SECTION LOCAL  DEFAULT    9 .debug_info
+    10: 00000000     0 SECTION LOCAL  DEFAULT   10 .debug_abbrev
+    11: 00000000     0 SECTION LOCAL  DEFAULT   11 .debug_aranges
+    12: 00000000     0 SECTION LOCAL  DEFAULT   12 .debug_str
+    13: 00000000     0 SECTION LOCAL  DEFAULT   13 .debug_ranges
+    14: 00000000     0 SECTION LOCAL  DEFAULT   14 .debug_frame
+    15: 00000000     0 FILE    LOCAL  DEFAULT  ABS start.o
+    16: 00000000     0 NOTYPE  LOCAL  DEFAULT    1 VIC
+    17: 00000028     0 NOTYPE  LOCAL  DEFAULT    1 _init
+    18: 00000000     0 NOTYPE  LOCAL  DEFAULT    1 $a
+    19: 00000030     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    20: 00000000     0 FILE    LOCAL  DEFAULT  ABS main.c
+    21: 00000034     0 NOTYPE  LOCAL  DEFAULT    1 $a
+    22: 0000007c     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    23: 00000118     0 NOTYPE  LOCAL  DEFAULT    2 $a
+    24: 0000022c     0 NOTYPE  LOCAL  DEFAULT    2 $d
+    25: 00000084     0 NOTYPE  LOCAL  DEFAULT    1 $a
+    26: 000000fc     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    27: 00000108     0 NOTYPE  LOCAL  DEFAULT    1 $a
+    28: 00000244     0 NOTYPE  LOCAL  DEFAULT    3 $d
+    29: 00000284     0 NOTYPE  LOCAL  DEFAULT    4 $d
+    30: 00000298     0 NOTYPE  LOCAL  DEFAULT    5 $d
+    31: 00000298     4 OBJECT  LOCAL  DEFAULT    5 lport_dr
+    32: 0000029c     4 OBJECT  LOCAL  DEFAULT    5 lport_pin
+    33: 0000026c     4 OBJECT  GLOBAL DEFAULT    3 GPIO_PADR_OFFSET
+    34: 0000024c     4 OBJECT  GLOBAL DEFAULT    3 tLED_BLINKING_TIME
+    35: 00000258     4 OBJECT  GLOBAL DEFAULT    3 GPIO_PCDDR_OFFSET
+    36: 00000084   132 FUNC    GLOBAL DEFAULT    1 pps_led_flash
+    37: 00000260     1 OBJECT  GLOBAL DEFAULT    3 PA_ADDR1_PIN
+    38: 00000284     4 OBJECT  GLOBAL DEFAULT    4 fled_port_dr
+    39: 00000279     1 OBJECT  GLOBAL DEFAULT    3 RTC_CR_XSEL_POS
+    40: 00000277     1 OBJECT  GLOBAL DEFAULT    3 RTC_CR_FREEZ_POS
+    41: 00000263     1 OBJECT  GLOBAL DEFAULT    3 PA_EN_PIN
+    42: 00000248     1 OBJECT  GLOBAL DEFAULT    3 PC_LED_PIN
+    43: 00000262     1 OBJECT  GLOBAL DEFAULT    3 PA_RDY_PIN
+    44: 00000268     4 OBJECT  GLOBAL DEFAULT    3 GPIO_PADDR_OFFSET
+    45: 00000276     1 OBJECT  GLOBAL DEFAULT    3 RTC_CR_WDT_SEL_POS
+    46: 00000000     0 NOTYPE  GLOBAL DEFAULT    1 _start
+    47: 00000275     1 OBJECT  GLOBAL DEFAULT    3 RTC_CR_SF_SEL_POS
+    48: 00000278     1 OBJECT  GLOBAL DEFAULT    3 RTC_CR_WDT_EN_POS
+    49: 00000034    80 FUNC    GLOBAL DEFAULT    1 init_pps_led
+    50: 00000261     1 OBJECT  GLOBAL DEFAULT    3 PA_ADDR0_PIN
+    51: 00000108    16 FUNC    GLOBAL DEFAULT    1 init_pps_led_and[...]
+    52: 00000270     4 OBJECT  GLOBAL DEFAULT    3 GPIO_BASE
+    53: 00000118   300 FUNC    GLOBAL DEFAULT    2 main
+    54: 0000027a     1 OBJECT  GLOBAL DEFAULT    3 RTC_CR_OFFSET
+    55: 00000264     4 OBJECT  GLOBAL DEFAULT    3 GPIO_PAIN_OFFSET
+    56: 000002a4     4 OBJECT  GLOBAL DEFAULT    5 count
+    57: 000002a0     4 OBJECT  GLOBAL DEFAULT    5 delay
+    58: 00000280     4 OBJECT  GLOBAL DEFAULT    3 APB1_BUS_BASE
+    59: 00000254     4 OBJECT  GLOBAL DEFAULT    3 GPIO_PCIN_OFFSET
+    60: 0000028c     4 OBJECT  GLOBAL DEFAULT    4 PCDDR
+    61: 00000288     4 OBJECT  GLOBAL DEFAULT    4 fled_port_ddr
+    62: 00000250     4 OBJECT  GLOBAL DEFAULT    3 GPIO_PCPU_OFFSET
+    63: 00000294     4 OBJECT  GLOBAL DEFAULT    4 RTC_BASE
+    64: 00000290     4 OBJECT  GLOBAL DEFAULT    4 PCDR
+    65: 00000244     4 OBJECT  GLOBAL DEFAULT    3 fled_port_pin
+    66: 0000027c     4 OBJECT  GLOBAL DEFAULT    3 APB2_BUS_BASE
+    67: 00000274     1 OBJECT  GLOBAL DEFAULT    3 RTC_CR_OFF_DIV_POS
+    68: 0000025c     4 OBJECT  GLOBAL DEFAULT    3 GPIO_PCDR_OFFSET
+
+No version information found in this file.
+Attribute Section: aeabi
+File Attributes
+  Tag_CPU_name: "5TE"
+  Tag_CPU_arch: v5TE
+  Tag_ARM_ISA_use: Yes
+  Tag_THUMB_ISA_use: Thumb-1
+  Tag_ABI_PCS_wchar_t: 4
+  Tag_ABI_FP_denormal: Needed
+  Tag_ABI_FP_exceptions: Needed
+  Tag_ABI_FP_number_model: IEEE 754
+  Tag_ABI_align_needed: 8-byte
+  Tag_ABI_enum_size: small

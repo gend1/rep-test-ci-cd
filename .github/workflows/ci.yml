@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+       runs-on: ubuntu-latest
+
+    container:
+      image: gend11/gcc-build-v1.0
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Build firmware
+        run: |
+          echo "Starting build..."  
+      - name: Upload firmware artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: firmware-bin
+          path: build/firmware.bin

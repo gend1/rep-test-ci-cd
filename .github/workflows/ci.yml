@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+ 
+      - name: Give execute permission to build script
+        run: chmod +x firmware/makefile/build.sh
 
       - name: Build firmware
         run: ./firmware/makefile/build.sh

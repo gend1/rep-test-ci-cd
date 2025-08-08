@@ -1,31 +1,22 @@
-#!/bin/sh
-#-----------------------
-#***********************
-#
-#	 Обрабатывает все файлы каталога командной строкой,
-#	  которая указывается как параметр
-#
-#***********************
-#-----------------------
-cd ./
-for file in *.o
-do
-	if [ -f "${file}" ]; then
-		echo -e "Выполняем:readelf -a "${file}" >"${file}".map"
-		nice -n 20 readelf -a "${file}" >""${file}".map" 2>&1
-	fi
+#!/bin/bash
+
+for file in *.o; do
+    if [ -f "${file}" ]; then
+        echo "Выполняем: readelf -a \"${file}\" > \"${file}.map\""
+        nice -n 20 readelf -a "${file}" > "${file}.map" 2>&1
+    fi
 done
-for file in *.axf
-do
-	if [ -f "${file}" ]; then
-		echo -e "Выполняем:readelf -a "${file}" >"${file}".map"
-		nice -n 20 readelf -a "${file}" >""${file}".map" 2>&1
-	fi
+
+for file in *.axf; do
+    if [ -f "${file}" ]; then
+        echo "Выполняем: readelf -a \"${file}\" > \"${file}.map\""
+        nice -n 20 readelf -a "${file}" > "${file}.map" 2>&1
+    fi
 done
-for file in *.o.IDE
-do
-	if [ -f "${file}" ]; then
-		echo -e "Выполняем:readelf -a "${file}" >"${file}".map"
-		nice -n 20 readelf -a "${file}" >""${file}".map" 2>&1
-	fi
+
+for file in *.o.IDE; do
+    if [ -f "${file}" ]; then
+        echo "Выполняем: readelf -a \"${file}\" > \"${file}.map\""
+        nice -n 20 readelf -a "${file}" > "${file}.map" 2>&1
+    fi
 done

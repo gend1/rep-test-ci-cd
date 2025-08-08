@@ -13,12 +13,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build firmware
-        run: |
-          echo "Starting build..."
-          make
+        run: ./firmware/makefile/build.sh
 
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v4
         with:
           name: firmware-bin
-          path: build/firmware.bin
+          path: firmware/makefile/*.bin
